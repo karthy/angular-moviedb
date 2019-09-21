@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { HomeModule } from './home/home.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HomeModule ],
+  imports:      [ BrowserModule, FormsModule, HomeModule, HttpClientModule ],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ]
 })
