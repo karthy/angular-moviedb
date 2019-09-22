@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from './search.service';
+import { NewsHeadlinesService } from './newsheadlines.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -7,15 +7,15 @@ import { SearchService } from './search.service';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-  newsDetail: []
+  newsArticles: []
 
-  constructor(private _searchservice: SearchService) { }
+  constructor(private _newsheadlinesservice: NewsHeadlinesService) { }
 
   ngOnInit() {
    
-      this._searchservice.getNews()
+      this._newsheadlinesservice.getNewsHeadlines()
       .subscribe(data => {console.log(data);
-      this.newsDetail = data['articles'];
+      this.newsArticles = data['articles'];
       });
   }
 
