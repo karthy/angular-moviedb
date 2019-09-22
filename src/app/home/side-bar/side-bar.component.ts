@@ -7,15 +7,16 @@ import { SearchService } from './search.service';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-  movieDetail: []
+  newsDetail: []
 
   constructor(private _searchservice: SearchService) { }
 
   ngOnInit() {
    
-      this._searchservice.getMovie()
-      .subscribe(data => this.movieDetail = data);
-    
+      this._searchservice.getNews()
+      .subscribe(data => {console.log(data);
+      this.newsDetail = data['articles'];
+      });
   }
 
 }

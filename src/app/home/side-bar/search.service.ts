@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Imoviedetails } from './Imoviedetails';
+import { Inewsdetails } from './Inewsdetails';
 
 
 @Injectable()
 export class SearchService {
-
-  urlid ='http://www.omdbapi.com/?t=Harry+potter&apikey=a8b2149e';
-
+  API_KEY = 'a34c349e20b0402283eab523cfd516a7';
+  urlid ='https://newsapi.org/v2/top-headlines?country=us&apiKey=${this.API_KEY)';
+  
   constructor(private httpClient: HttpClient) { }
 
-  getMovie(): Observable<any> {
-    return this.httpClient.get<Imoviedetails[]>(this.urlid);
+  getNews(): Observable<any> {
+    return this.httpClient.get(this.urlid);
   }
 }
