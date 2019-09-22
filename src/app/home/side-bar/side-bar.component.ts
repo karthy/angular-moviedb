@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from './search.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
+  movieDetail: []
 
-  constructor() { }
+  constructor(private _searchservice: SearchService) { }
 
   ngOnInit() {
-    searchMovie():
+   
+      this._searchservice.getMovie()
+      .subscribe(data => this.movieDetail = data);
+    
   }
 
 }

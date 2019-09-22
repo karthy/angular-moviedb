@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Imoviedetails } from './home/interface/Imoviedetails';
+import { Imoviedetails } from './Imoviedetails';
 
 
 @Injectable()
@@ -12,6 +12,6 @@ export class SearchService {
   constructor(private httpClient: HttpClient) { }
 
   getMovie(): Observable<any> {
-    return this.httpClient.get(this.urlid);
+    return this.httpClient.get<Imoviedetails[]>(this.urlid);
   }
 }
