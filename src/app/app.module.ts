@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSidenavModule } from '@angular/material';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HomeModule, HttpClientModule ],
+  imports:      [ BrowserModule, FormsModule, HomeModule, HttpClientModule, MatSidenavModule ],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ]
 })
